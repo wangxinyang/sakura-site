@@ -1,0 +1,168 @@
+{
+  "common": {
+    "siteName": "樱花棒球俱乐部",
+    "home": "首页",
+    "news": "新闻动态",
+    "team": "团队介绍",
+    "players": "队员列表",
+    "join": "加入我们",
+    "contact": "联系我们",
+    "language": "语言",
+    "darkMode": "深色模式",
+    "lightMode": "浅色模式"
+  },
+  "home": {
+    "title": "樱花棒球俱乐部",
+    "join": "加入我们",
+    "team": "团队介绍",
+    "contact": "联系我们",
+    "announcement": "现在招募2025赛季新队员！",
+    "hero": {
+      "title": "在东京与孩子们一起享受棒球的乐趣！",
+      "subtitle": "欢迎来到樱花棒球俱乐部，这里培养孩子们的成长和友谊",
+      "cta": "立即加入",
+      "slides": {
+        "1": {
+          "title": "欢迎来到樱花棒球俱乐部",
+          "description": "一个促进儿童成长和友谊的社区棒球俱乐部"
+        },
+        "2": {
+          "title": "训练场景",
+          "description": "我们每周六和周日进行训练"
+        },
+        "3": {
+          "title": "比赛经验",
+          "description": "通过与其他当地队伍的比赛获得实战经验"
+        }
+      }
+    },
+    "about": {
+      "title": "关于我们",
+      "description": "樱花棒球俱乐部是一支位于东京江东区的青少年棒球队。成立于2010年，我们不仅注重提高棒球技能，还致力于发展儿童的身心成长、团队合作和责任感。目前，我们拥有约40名来自1至6年级的队员。",
+      "cta": "了解我们的团队",
+      "stats": {
+        "members": {
+          "title": "队员数量",
+          "description": "小学1-6年级，约45名队员"
+        },
+        "practice": {
+          "title": "训练日",
+          "description": "每周六日 9:00-12:00"
+        },
+        "location": {
+          "title": "活动地点",
+          "description": "江东区体育中心"
+        }
+      }
+    },
+    "activities": {
+      "title": "活动内容",
+      "practice": {
+        "title": "训练",
+        "description": "我们从基础开始提供全面指导，支持每个孩子的成长。",
+        "cta": "了解更多"
+      },
+      "matches": {
+        "title": "比赛",
+        "description": "我们参加与其他本地队伍的练习赛和比赛，获得实战经验。",
+        "cta": "了解更多"
+      },
+      "events": {
+        "title": "活动",
+        "description": "我们还举办团队夏令营和亲子活动，丰富棒球以外的活动。",
+        "cta": "了解更多"
+      }
+    },
+    "news": {
+      "title": "最新动态",
+      "viewAll": "查看全部",
+      "readMore": "阅读更多",
+      "items": {
+        "1": {
+          "title": "现在招募2025赛季新队员",
+          "category": "公告",
+          "content": "我们正在为即将到来的新赛季招募新队员。面向小学1至6年级学生。随时欢迎参观和体验。"
+        },
+        "2": {
+          "title": "春季友谊赛结果",
+          "category": "比赛结果",
+          "content": "上周末与港区队进行的友谊赛中，我们以3比2获胜。每个人都表现出色。"
+        },
+        "3": {
+          "title": "训练地点变更",
+          "category": "公告",
+          "content": "从10月开始，我们的训练地点将变更为江东区体育中心。具体详情将由各年级教练通知。"
+        }
+      }
+    }
+  },
+  "team": {
+    "title": "团队介绍",
+    "description": "认识樱花棒球俱乐部的教练和主要队员。我们团结一心，共同提高技能和培养品格。",
+    "coaches": "教练团队",
+    "players": "队员介绍",
+    "grade": "{{grade}}年级",
+    "roles": {
+      "head-coach": "主教练",
+      "assistant-coach": "助理教练",
+      "team-captain": "队长",
+      "player": "队员"
+    }
+  },
+  "join": {
+    "title": "加入我们",
+    "description": "樱花棒球俱乐部一直在寻找新成员。没有棒球经验的孩子也欢迎加入！",
+    "requirements": "条件：小学1-6年级（男孩和女孩）| 训练时间：每周六和周日 9:00-12:00 | 地点：江东区公园运动场",
+    "cta": "立即加入",
+    "form": {
+      "title": "会员申请表",
+      "childName": "孩子姓名",
+      "childNamePlaceholder": "樱花太郎",
+      "childAge": "孩子年龄",
+      "childAgePlaceholder": "10",
+      "childGrade": "年级",
+      "childGradePlaceholder": "4年级",
+      "childGender": "性别",
+      "male": "男",
+      "female": "女",
+      "other": "其他/不愿透露",
+      "parentName": "家长/监护人姓名",
+      "parentNamePlaceholder": "樱花花子",
+      "email": "电子邮箱",
+      "emailPlaceholder": "example@email.com",
+      "phone": "电话号码",
+      "phonePlaceholder": "090-1234-5678",
+      "experience": "棒球经验",
+      "experiencePlaceholder": "无经验或经验年数",
+      "message": "留言（可选）",
+      "messagePlaceholder": "请输入您可能有的任何问题或请求",
+      "submit": "提交",
+      "success": "我们已收到您的申请。我们将很快向您发送确认电子邮件。",
+      "error": "发生错误。请稍后再试。"
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "description": "如果您有任何问题或咨询，请随时通过以下表格与我们联系。",
+    "cta": "联系我们",
+    "form": {
+      "title": "联系表格",
+      "name": "您的姓名",
+      "namePlaceholder": "樱花太郎",
+      "email": "电子邮箱",
+      "emailPlaceholder": "example@email.com",
+      "subject": "主题",
+      "subjectPlaceholder": "关于体验参与",
+      "message": "留言",
+      "messagePlaceholder": "请输入您的咨询详情",
+      "submit": "提交",
+      "success": "我们已收到您的消息。我们将很快向您发送确认电子邮件。",
+      "error": "发生错误。请稍后再试。"
+    }
+  },
+  "footer": {
+    "rights": "© 2025 樱花棒球俱乐部。保留所有权利。",
+    "address": "东京都江东区",
+    "practice": "训练时间：每周六日 9:00-12:00"
+  }
+}

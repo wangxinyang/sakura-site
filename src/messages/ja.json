@@ -1,0 +1,168 @@
+{
+  "common": {
+    "siteName": "サクラ野球クラブ",
+    "home": "ホーム",
+    "news": "ニュース",
+    "team": "チーム紹介",
+    "players": "選手紹介",
+    "join": "入部案内",
+    "contact": "お問い合わせ",
+    "language": "言語",
+    "darkMode": "ダークモード",
+    "lightMode": "ライトモード"
+  },
+  "home": {
+    "title": "サクラ野球クラブ",
+    "join": "入部案内",
+    "team": "チーム紹介",
+    "contact": "お問い合わせ",
+    "announcement": "2025年シーズンの新入部員を募集中です！",
+    "hero": {
+      "title": "東京で子どもたちと野球を楽しもう！",
+      "subtitle": "子供たちの成長と友情を育むサクラ野球クラブへようこそ",
+      "cta": "入部案内を見る",
+      "slides": {
+        "1": {
+          "title": "サクラ野球クラブへようこそ",
+          "description": "子どもたちの成長と友情を育む地域密着型の野球クラブです"
+        },
+        "2": {
+          "title": "練習風景",
+          "description": "毎週土曜日・日曜日に練習を行っています"
+        },
+        "3": {
+          "title": "試合",
+          "description": "地域の他チームとの試合を通じて実践経験を積みます"
+        }
+      }
+    },
+    "about": {
+      "title": "クラブについて",
+      "description": "サクラ野球クラブは、東京都江東区を中心に活動する少年野球チームです。野球の技術向上だけでなく、子供たちの心身の成長や協調性、責任感を育む場として2010年に設立されました。現在は小学1年生から6年生までの約40名の選手が在籍しています。",
+      "cta": "チームを見る",
+      "stats": {
+        "members": {
+          "title": "部員数",
+          "description": "小学1～6年生、約45名"
+        },
+        "practice": {
+          "title": "練習日",
+          "description": "毎週土日 9:00-12:00"
+        },
+        "location": {
+          "title": "活動場所",
+          "description": "江東区スポーツセンター"
+        }
+      }
+    },
+    "activities": {
+      "title": "活動内容",
+      "practice": {
+        "title": "練習",
+        "description": "基礎から丁寧に指導し、子供一人ひとりの成長をサポートします。",
+        "cta": "詳細を見る"
+      },
+      "matches": {
+        "title": "試合",
+        "description": "地域の他チームとの練習試合や大会に参加し、実践経験を積みます。",
+        "cta": "詳細を見る"
+      },
+      "events": {
+        "title": "イベント",
+        "description": "チーム合宿や親子イベントなど、野球以外の活動も充実しています。",
+        "cta": "詳細を見る"
+      }
+    },
+    "news": {
+      "title": "最新情報",
+      "viewAll": "すべて見る",
+      "readMore": "続きを読む",
+      "items": {
+        "1": {
+          "title": "2025年シーズン新入部員募集中",
+          "category": "お知らせ",
+          "content": "来年度の新入部員を募集しています。小学1年生から6年生までが対象です。見学・体験はいつでも歓迎です。"
+        },
+        "2": {
+          "title": "春季交流戦結果",
+          "category": "試合結果",
+          "content": "先週末に行われた港区チームとの交流戦で3-2で勝利しました。皆さん素晴らしいプレーを見せてくれました。"
+        },
+        "3": {
+          "title": "練習場所の変更について",
+          "category": "お知らせ",
+          "content": "10月から練習場所が江東区スポーツセンターに変更になります。詳細は各学年の担当コーチからお知らせします。"
+        }
+      }
+    }
+  },
+  "team": {
+    "title": "チーム紹介",
+    "description": "サクラ野球クラブの指導者と主要選手をご紹介します。チーム一丸となって技術向上と人格形成に取り組んでいます。",
+    "coaches": "コーチ陣",
+    "players": "選手紹介",
+    "grade": "{{grade}}年生",
+    "roles": {
+      "head-coach": "ヘッドコーチ",
+      "assistant-coach": "アシスタントコーチ",
+      "team-captain": "チームキャプテン",
+      "player": "選手"
+    }
+  },
+  "join": {
+    "title": "入部案内",
+    "description": "サクラ野球クラブでは新メンバーを随時募集しています。野球が初めてのお子様も大歓迎です！",
+    "requirements": "対象：小学1～6年生（男女） | 練習：毎週土・日 9:00-12:00 | 場所：江東区公園グラウンド",
+    "cta": "今すぐ入部",
+    "form": {
+      "title": "入部申し込みフォーム",
+      "childName": "お子様のお名前",
+      "childNamePlaceholder": "桜 太郎",
+      "childAge": "お子様の年齢",
+      "childAgePlaceholder": "10",
+      "childGrade": "学年",
+      "childGradePlaceholder": "4年生",
+      "childGender": "性別",
+      "male": "男子",
+      "female": "女子",
+      "other": "その他・回答しない",
+      "parentName": "保護者氏名",
+      "parentNamePlaceholder": "桜 花子",
+      "email": "メールアドレス",
+      "emailPlaceholder": "example@email.com",
+      "phone": "電話番号",
+      "phonePlaceholder": "090-1234-5678",
+      "experience": "野球経験",
+      "experiencePlaceholder": "未経験、または経験年数",
+      "message": "メッセージ（任意）",
+      "messagePlaceholder": "質問やリクエストがあればご入力ください",
+      "submit": "送信する",
+      "success": "お申し込みを受け付けました。確認メールを送信します。",
+      "error": "エラーが発生しました。後でもう一度お試しください。"
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "description": "ご質問やお問い合わせは、以下のフォームからお気軽にご連絡ください。",
+    "cta": "お問い合わせ",
+    "form": {
+      "title": "お問い合わせフォーム",
+      "name": "お名前",
+      "namePlaceholder": "桜 太郎",
+      "email": "メールアドレス",
+      "emailPlaceholder": "example@email.com",
+      "subject": "件名",
+      "subjectPlaceholder": "体験参加について",
+      "message": "メッセージ",
+      "messagePlaceholder": "お問い合わせ内容をご入力ください",
+      "submit": "送信する",
+      "success": "お問い合わせを受け付けました。確認メールを送信します。",
+      "error": "エラーが発生しました。後でもう一度お試しください。"
+    }
+  },
+  "footer": {
+    "rights": "© 2025 サクラ野球クラブ. All rights reserved.",
+    "address": "東京都江東区",
+    "practice": "練習：毎週土・日 9:00-12:00"
+  }
+}

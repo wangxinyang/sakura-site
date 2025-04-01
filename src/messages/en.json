@@ -1,0 +1,168 @@
+{
+  "common": {
+    "siteName": "Sakura Baseball Club",
+    "home": "Home",
+    "news": "News",
+    "team": "Our Team",
+    "players": "Players",
+    "join": "Join Us",
+    "contact": "Contact",
+    "language": "Language",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode"
+  },
+  "home": {
+    "title": "Sakura Baseball Club",
+    "join": "Join Us",
+    "team": "Our Team",
+    "contact": "Contact",
+    "announcement": "Now recruiting new members for 2025 season!",
+    "hero": {
+      "title": "Enjoy Baseball with Kids in Tokyo!",
+      "subtitle": "Welcome to Sakura Baseball Club where we foster children's growth and friendship",
+      "cta": "Join Us Today",
+      "slides": {
+        "1": {
+          "title": "Welcome to Sakura Baseball Club",
+          "description": "A community-based baseball club fostering children's growth and friendship"
+        },
+        "2": {
+          "title": "Practice Sessions",
+          "description": "We practice every Saturday and Sunday"
+        },
+        "3": {
+          "title": "Games",
+          "description": "Gain practical experience through games with other local teams"
+        }
+      }
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Sakura Baseball Club is a youth baseball team based in Koto Ward, Tokyo. Established in 2010, we focus not only on improving baseball skills but also on developing children's physical and mental growth, teamwork, and sense of responsibility. Currently, we have about 40 players from grades 1 to 6.",
+      "cta": "Meet Our Team",
+      "stats": {
+        "members": {
+          "title": "Members",
+          "description": "Elementary grades 1-6, about 45 players"
+        },
+        "practice": {
+          "title": "Practice Days",
+          "description": "Every Sat & Sun 9:00-12:00"
+        },
+        "location": {
+          "title": "Location",
+          "description": "Koto Ward Sports Center"
+        }
+      }
+    },
+    "activities": {
+      "title": "Our Activities",
+      "practice": {
+        "title": "Practice",
+        "description": "We provide thorough instruction from the basics to support each child's growth.",
+        "cta": "Learn More"
+      },
+      "matches": {
+        "title": "Games",
+        "description": "We participate in practice games and tournaments with other local teams to gain practical experience.",
+        "cta": "Learn More"
+      },
+      "events": {
+        "title": "Events",
+        "description": "We also have team camps and parent-child events to enrich activities beyond baseball.",
+        "cta": "Learn More"
+      }
+    },
+    "news": {
+      "title": "Latest News",
+      "viewAll": "View All",
+      "readMore": "Read More",
+      "items": {
+        "1": {
+          "title": "Now Recruiting New Members for 2025 Season",
+          "category": "Announcement",
+          "content": "We are recruiting new members for the upcoming year. Open to elementary school students from grades 1 to 6. Visits and trial sessions are welcome anytime."
+        },
+        "2": {
+          "title": "Results of Spring Friendly Match",
+          "category": "Game Results",
+          "content": "We won 3-2 in the friendly match with Minato Ward team held last weekend. Everyone showed excellent performance."
+        },
+        "3": {
+          "title": "Change of Practice Location",
+          "category": "Announcement",
+          "content": "Starting from October, our practice location will change to Koto Ward Sports Center. Details will be provided by coaches for each grade."
+        }
+      }
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "description": "Meet the coaches and key players of Sakura Baseball Club. We work together as one team to improve skills and develop character.",
+    "coaches": "Coaches",
+    "players": "Players",
+    "grade": "Grade {{grade}}",
+    "roles": {
+      "head-coach": "Head Coach",
+      "assistant-coach": "Assistant Coach",
+      "team-captain": "Team Captain",
+      "player": "Player"
+    }
+  },
+  "join": {
+    "title": "Join Us",
+    "description": "Sakura Baseball Club is always looking for new members. Children with no baseball experience are also welcome!",
+    "requirements": "Eligibility: Elementary school grades 1-6 (boys and girls) | Practice: Every Saturday & Sunday 9:00-12:00 | Location: Koto Ward Park Ground",
+    "cta": "Join Us Today",
+    "form": {
+      "title": "Membership Application Form",
+      "childName": "Child's Name",
+      "childNamePlaceholder": "Taro Sakura",
+      "childAge": "Child's Age",
+      "childAgePlaceholder": "10",
+      "childGrade": "School Grade",
+      "childGradePlaceholder": "4th grade",
+      "childGender": "Gender",
+      "male": "Boy",
+      "female": "Girl",
+      "other": "Other/Prefer not to say",
+      "parentName": "Parent/Guardian Name",
+      "parentNamePlaceholder": "Hanako Sakura",
+      "email": "Email Address",
+      "emailPlaceholder": "example@email.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "090-1234-5678",
+      "experience": "Baseball Experience",
+      "experiencePlaceholder": "No experience, or years of experience",
+      "message": "Message (Optional)",
+      "messagePlaceholder": "Please enter any questions or requests you may have",
+      "submit": "Submit",
+      "success": "Your application has been received. We will send you a confirmation email shortly.",
+      "error": "An error occurred. Please try again later."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "If you have any questions or inquiries, please feel free to contact us using the form below.",
+    "cta": "Contact Us",
+    "form": {
+      "title": "Contact Form",
+      "name": "Your Name",
+      "namePlaceholder": "Taro Sakura",
+      "email": "Email Address",
+      "emailPlaceholder": "example@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "About trial participation",
+      "message": "Message",
+      "messagePlaceholder": "Please enter your inquiry details",
+      "submit": "Submit",
+      "success": "Your message has been received. We will send you a confirmation email shortly.",
+      "error": "An error occurred. Please try again later."
+    }
+  },
+  "footer": {
+    "rights": "© 2025 Sakura Baseball Club. All rights reserved.",
+    "address": "Koto Ward, Tokyo",
+    "practice": "Practice: Saturdays & Sundays 9:00-12:00"
+  }
+}

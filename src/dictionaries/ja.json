@@ -1,0 +1,107 @@
+{
+  "page": {
+    "home": "ホーム",
+    "team": "チーム紹介",
+    "join": "入部案内",
+    "contact": "お問い合わせ",
+    "news": "新着情報"
+  },
+  "error": {
+    "default": "エラーが発生しました",
+    "not-found": "ページが見つかりません",
+    "go-back": "戻る"
+  },
+  "theme": {
+    "light": "ライト",
+    "dark": "ダーク",
+    "system": "システム設定"
+  },
+  "home": {
+    "title": "サクラ野球クラブ",
+    "join": "入部案内",
+    "team": "チーム紹介",
+    "contact": "お問い合わせ",
+    "hero": {
+      "title": "東京で子供たちと野球を楽しもう！",
+      "subtitle": "子供たちの成長と友情を育むサクラ野球クラブへようこそ",
+      "cta": "入部案内を見る"
+    },
+    "about": {
+      "title": "クラブ紹介",
+      "description": "サクラ野球クラブは、東京都江東区を中心に活動する少年野球チームです。野球の技術向上だけでなく、子供たちの心身の成長や協調性、責任感を育む場として2010年に設立されました。現在は小学1年生から6年生までの約40名の選手が在籍しています。",
+      "viewTeam": "チームメンバーを見る"
+    },
+    "activities": {
+      "title": "活動内容",
+      "practice": "定期練習",
+      "matches": "試合・大会",
+      "events": "イベント・合宿"
+    },
+    "news": {
+      "title": "新着情報",
+      "viewAll": "すべて見る"
+    }
+  },
+  "team": {
+    "title": "チーム紹介",
+    "description": "サクラ野球クラブの指導者と主要選手をご紹介します。チーム一丸となって技術向上と人格形成に取り組んでいます。",
+    "coaches": "指導者",
+    "players": "選手紹介",
+    "grade": "{{grade}}年生",
+    "roles": {
+      "head-coach": "監督",
+      "assistant-coach": "コーチ",
+      "team-captain": "キャプテン",
+      "player": "選手"
+    }
+  },
+  "join": {
+    "title": "入部案内",
+    "description": "サクラ野球クラブでは新メンバーを随時募集しています。野球が初めてのお子様も大歓迎です！",
+    "requirements": "対象: 小学1年生〜6年生 (男女問わず) | 練習: 毎週土曜・日曜 9:00-12:00 | 場所: 江東区立〇〇公園グラウンド",
+    "form": {
+      "title": "入部申込フォーム",
+      "childName": "お子様の氏名",
+      "childNamePlaceholder": "桜 太郎",
+      "childAge": "お子様の年齢",
+      "childAgePlaceholder": "10",
+      "childGrade": "学年",
+      "childGradePlaceholder": "小学4年生",
+      "childGender": "性別",
+      "male": "男子",
+      "female": "女子",
+      "other": "その他/回答しない",
+      "parentName": "保護者氏名",
+      "parentNamePlaceholder": "桜 花子",
+      "email": "メールアドレス",
+      "emailPlaceholder": "example@email.com",
+      "phone": "電話番号",
+      "phonePlaceholder": "090-1234-5678",
+      "experience": "野球経験",
+      "experiencePlaceholder": "経験なし、または経験年数など",
+      "message": "メッセージ（任意）",
+      "messagePlaceholder": "質問やご要望などあればご記入ください",
+      "submit": "送信する",
+      "success": "申込みを受け付けました。確認メールをお送りしますので、ご確認ください。",
+      "error": "エラーが発生しました。後ほど再度お試しください。"
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "description": "ご質問やご相談などございましたら、以下のフォームからお気軽にお問い合わせください。",
+    "form": {
+      "title": "お問い合わせフォーム",
+      "name": "お名前",
+      "namePlaceholder": "桜 太郎",
+      "email": "メールアドレス",
+      "emailPlaceholder": "example@email.com",
+      "subject": "件名",
+      "subjectPlaceholder": "体験入部について",
+      "message": "メッセージ",
+      "messagePlaceholder": "お問い合わせ内容をご記入ください",
+      "submit": "送信する",
+      "success": "お問い合わせを受け付けました。確認メールをお送りしますので、ご確認ください。",
+      "error": "エラーが発生しました。後ほど再度お試しください。"
+    }
+  }
+}
