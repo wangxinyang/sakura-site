@@ -1,13 +1,14 @@
 "use client";
 
-import { HTMLAttributes, ReactNode } from "react";
+import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, MotionProps } from "framer-motion";
 
-interface PaperCardProps extends HTMLAttributes<HTMLDivElement> {
+interface PaperCardProps extends MotionProps {
   children: ReactNode;
   hover?: boolean;
   sakuraBorder?: boolean;
+  className?: string;
 }
 
 export default function PaperCard({

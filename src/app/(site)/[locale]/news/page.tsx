@@ -99,7 +99,7 @@ export default function NewsPage() {
         {news.map((item) => (
           <div
             key={item.id}
-            className="bg-white rounded-lg shadow-md overflow-hidden card-hover"
+            className="bg-white dark:bg-card rounded-lg shadow-md overflow-hidden card-hover"
           >
             <div className="flex flex-col md:flex-row">
               <div className="relative w-full md:w-1/3 h-60 md:h-auto">
@@ -117,9 +117,11 @@ export default function NewsPage() {
                   <Badge className="bg-sakura">{item.category}</Badge>
                 </div>
 
-                <h2 className="text-xl font-bold mb-4">{item.title}</h2>
+                <h2 className="text-xl font-bold mb-4 dark:text-foreground">
+                  {item.title}
+                </h2>
 
-                <div className="whitespace-pre-line text-muted-foreground">
+                <div className="whitespace-pre-line text-muted-foreground dark:text-foreground/80">
                   {item.content}
                 </div>
               </div>

@@ -3,7 +3,7 @@
     "siteName": "Sakura Baseball Club",
     "home": "Home",
     "news": "News",
-    "team": "Our Team",
+    "team": "Our Coaches",
     "players": "Players",
     "join": "Join Us",
     "contact": "Contact",
@@ -13,9 +13,6 @@
   },
   "home": {
     "title": "Sakura Baseball Club",
-    "join": "Join Us",
-    "team": "Our Team",
-    "contact": "Contact",
     "announcement": "Now recruiting new members for 2025 season!",
     "hero": {
       "title": "Enjoy Baseball with Kids in Tokyo!",
@@ -97,11 +94,29 @@
     }
   },
   "team": {
-    "title": "Our Team",
-    "description": "Meet the coaches and key players of Sakura Baseball Club. We work together as one team to improve skills and develop character.",
+    "title": "Our Coaching Staff",
+    "description": "Meet our experienced coaching staff at Sakura Baseball Club. Our dedicated coaches support the growth and development of each child across different teams.",
     "coaches": "Coaches",
     "players": "Players",
+    "teams": {
+      "A": "Team A (Grades 5-6)",
+      "B": "Team B (Grades 3-4)",
+      "C": "Team C (Grades 1-2)"
+    },
+    "team_descriptions": {
+      "A": "This team is for 5th and 6th graders. We focus on gaining game experience and improving technical skills and competitiveness.",
+      "B": "This team is for 3rd and 4th graders. We establish basic techniques and develop practical skills through game experience.",
+      "C": "This team is for 1st and 2nd graders. Our goal is to introduce the fun of baseball and develop fundamental movements."
+    },
     "grade": "Grade {{grade}}",
+    "grades": {
+      "1": "1st Grade",
+      "2": "2nd Grade",
+      "3": "3rd Grade",
+      "4": "4th Grade",
+      "5": "5th Grade",
+      "6": "6th Grade"
+    },
     "roles": {
       "head-coach": "Head Coach",
       "assistant-coach": "Assistant Coach",
@@ -111,34 +126,30 @@
   },
   "join": {
     "title": "Join Us",
-    "description": "Sakura Baseball Club is always looking for new members. Children with no baseball experience are also welcome!",
-    "requirements": "Eligibility: Elementary school grades 1-6 (boys and girls) | Practice: Every Saturday & Sunday 9:00-12:00 | Location: Koto Ward Park Ground",
+    "description": "Sakura Baseball Club is always looking for new members, from beginners to experienced players. Feel free to visit and try anytime.",
     "cta": "Join Us Today",
     "form": {
-      "title": "Membership Application Form",
+      "name": "Name",
       "childName": "Child's Name",
-      "childNamePlaceholder": "Taro Sakura",
-      "childAge": "Child's Age",
-      "childAgePlaceholder": "10",
-      "childGrade": "School Grade",
-      "childGradePlaceholder": "4th grade",
-      "childGender": "Gender",
-      "male": "Boy",
-      "female": "Girl",
-      "other": "Other/Prefer not to say",
+      "age": "Child's Age",
+      "grade": "School Grade",
+      "selectGrade": "Select Grade",
       "parentName": "Parent/Guardian Name",
-      "parentNamePlaceholder": "Hanako Sakura",
       "email": "Email Address",
-      "emailPlaceholder": "example@email.com",
       "phone": "Phone Number",
-      "phonePlaceholder": "090-1234-5678",
-      "experience": "Baseball Experience",
-      "experiencePlaceholder": "No experience, or years of experience",
-      "message": "Message (Optional)",
-      "messagePlaceholder": "Please enter any questions or requests you may have",
+      "teamPreference": "Team Preference",
+      "selectTeam": "Select Team",
+      "message": "Message",
       "submit": "Submit",
-      "success": "Your application has been received. We will send you a confirmation email shortly.",
+      "privacy": "Your information will be kept private and used only for club-related communications.",
+      "success": "Your message has been sent successfully!",
       "error": "An error occurred. Please try again later."
+    },
+    "contact": {
+      "success": {
+        "title": "Thank you for your interest!",
+        "message": "We've received your application and will contact you shortly with next steps."
+      }
     }
   },
   "contact": {
@@ -162,7 +173,7 @@
   },
   "footer": {
     "rights": "© 2025 Sakura Baseball Club. All rights reserved.",
-    "address": "Koto Ward, Tokyo",
+    "address": "Ojima Daisan Elementary School, Ojima 9-4, Koto Ward, Tokyo",
     "practice": "Practice: Saturdays & Sundays 9:00-12:00"
   }
 }

@@ -1,21 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 
 export default function JoinPage() {
   const t = useTranslations("join");
+  const [mounted, setMounted] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const [formState, setFormState] = useState({
     name: "",
+    age: "",
     grade: "",
-    contact: "",
+    parent: "",
+    email: "",
+    phone: "",
+    team: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<null | "success" | "error">(
-    null
-  );
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -23,120 +29,247 @@ export default function JoinPage() {
     >
   ) => {
     const { name, value } = e.target;
-    setFormState((prev) => ({ ...prev, [name]: value }));
+    setFormState((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-
-    try {
-      // 在实际项目中，这里应该调用API
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setSubmitStatus("success");
-      setFormState({
-        name: "",
-        grade: "",
-        contact: "",
-        message: "",
-      });
-    } catch (error) {
-      setSubmitStatus("error");
-      console.error("Error submitting form:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Here you would normally send the form data to a server
+    console.log("Form submitted:", formState);
+    setFormSubmitted(true);
+    // Reset form
+    setFormState({
+      name: "",
+      age: "",
+      grade: "",
+      parent: "",
+      email: "",
+      phone: "",
+      team: "",
+      message: "",
+    });
   };
+
+  if (!mounted) {
+    return (
+      <div className="container py-8 flex items-center justify-center min-h-[50vh] dark:text-foreground">
+        Loading...
+      </div>
+    );
+  }
 
   return (
-    <div className="container py-12 md:py-24">
-      <h1 className="text-4xl font-bold mb-8">{t("title")}</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div>
-          <p className="text-lg mb-6">{t("requirements")}</p>
-          <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden bg-muted flex items-center justify-center">
-            <p>Join Us Image</p>
+    <div className="container py-8">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold mb-2 section-title dark:text-foreground">
+          {t("title")}
+        </h1>
+      </div>
+
+      <div className="bg-slate-50 dark:bg-secondary rounded-lg p-8 mb-12">
+        {formSubmitted ? (
+          <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg text-center">
+            <h3 className="text-xl font-semibold text-green-700 dark:text-green-400 mb-2">
+              {t("contact.success.title")}
+            </h3>
+            <p className="text-green-600 dark:text-green-300">
+              {t("contact.success.message")}
+            </p>
           </div>
-        </div>
-        <div>
-          <h2 className="text-2xl font-semibold mb-6">{t("form.title")}</h2>
-          {submitStatus === "success" ? (
-            <div className="bg-green-50 border border-green-200 text-green-800 rounded-md p-4 mb-6">
-              {t("form.success")}
-            </div>
-          ) : submitStatus === "error" ? (
-            <div className="bg-red-50 border border-red-200 text-red-800 rounded-md p-4 mb-6">
-              {t("form.error")}
-            </div>
-          ) : null}
+        ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block mb-2 font-medium">
-                {t("form.name")}
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formState.name}
-                onChange={handleChange}
-                required
-                className="w-full p-2 border rounded-md"
-              />
-            </div>
-            <div>
-              <label htmlFor="grade" className="block mb-2 font-medium">
-                {t("form.grade")}
-              </label>
-              <select
-                id="grade"
-                name="grade"
-                value={formState.grade}
-                onChange={handleChange}
-                required
-                className="w-full p-2 border rounded-md"
-              >
-                <option value="">--</option>
-                {[1, 2, 3, 4, 5, 6].map((grade) => (
-                  <option key={grade} value={grade}>
-                    {grade}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block mb-2 font-medium dark:text-foreground"
+                >
+                  {t("form.childName")}
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formState.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-foreground"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="age"
+                  className="block mb-2 font-medium dark:text-foreground"
+                >
+                  {t("form.age")}
+                </label>
+                <input
+                  type="number"
+                  id="age"
+                  name="age"
+                  value={formState.age}
+                  onChange={handleChange}
+                  required
+                  min="6"
+                  max="12"
+                  className="w-full p-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-foreground"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="grade"
+                  className="block mb-2 font-medium dark:text-foreground"
+                >
+                  {t("form.grade")}
+                </label>
+                <select
+                  id="grade"
+                  name="grade"
+                  value={formState.grade}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-foreground"
+                >
+                  <option value="" className="dark:bg-gray-800">
+                    {t("form.selectGrade")}
                   </option>
-                ))}
-              </select>
+                  <option value="1" className="dark:bg-gray-800">
+                    1年生
+                  </option>
+                  <option value="2" className="dark:bg-gray-800">
+                    2年生
+                  </option>
+                  <option value="3" className="dark:bg-gray-800">
+                    3年生
+                  </option>
+                  <option value="4" className="dark:bg-gray-800">
+                    4年生
+                  </option>
+                  <option value="5" className="dark:bg-gray-800">
+                    5年生
+                  </option>
+                  <option value="6" className="dark:bg-gray-800">
+                    6年生
+                  </option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="parent"
+                  className="block mb-2 font-medium dark:text-foreground"
+                >
+                  {t("form.parentName")}
+                </label>
+                <input
+                  type="text"
+                  id="parent"
+                  name="parent"
+                  value={formState.parent}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-foreground"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block mb-2 font-medium dark:text-foreground"
+                >
+                  {t("form.email")}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-foreground"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block mb-2 font-medium dark:text-foreground"
+                >
+                  {t("form.phone")}
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formState.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-foreground"
+                />
+              </div>
+
+              <div className="md:col-span-2">
+                <label
+                  htmlFor="team"
+                  className="block mb-2 font-medium dark:text-foreground"
+                >
+                  {t("form.teamPreference")}
+                </label>
+                <select
+                  id="team"
+                  name="team"
+                  value={formState.team}
+                  onChange={handleChange}
+                  className="w-full p-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-foreground"
+                >
+                  <option value="" className="dark:bg-gray-800">
+                    {t("form.selectTeam")}
+                  </option>
+                  <option value="teamA" className="dark:bg-gray-800">
+                    チームA (5-6年生)
+                  </option>
+                  <option value="teamB" className="dark:bg-gray-800">
+                    チームB (3-4年生)
+                  </option>
+                  <option value="teamC" className="dark:bg-gray-800">
+                    チームC (1-2年生)
+                  </option>
+                </select>
+              </div>
+
+              <div className="md:col-span-2">
+                <label
+                  htmlFor="message"
+                  className="block mb-2 font-medium dark:text-foreground"
+                >
+                  {t("form.message")}
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formState.message}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full p-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-foreground"
+                ></textarea>
+              </div>
             </div>
-            <div>
-              <label htmlFor="contact" className="block mb-2 font-medium">
-                {t("form.contact")}
-              </label>
-              <input
-                type="text"
-                id="contact"
-                name="contact"
-                value={formState.contact}
-                onChange={handleChange}
-                required
-                className="w-full p-2 border rounded-md"
-              />
+
+            <div className="text-center mt-8">
+              <Button type="submit" className="px-8 py-2">
+                {t("form.submit")}
+              </Button>
+              <p className="text-sm text-muted-foreground mt-2 dark:text-foreground/70">
+                {t("form.privacy")}
+              </p>
             </div>
-            <div>
-              <label htmlFor="message" className="block mb-2 font-medium">
-                {t("form.message")}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formState.message}
-                onChange={handleChange}
-                rows={4}
-                className="w-full p-2 border rounded-md"
-              />
-            </div>
-            <Button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "..." : t("form.submit")}
-            </Button>
           </form>
-        </div>
+        )}
       </div>
     </div>
   );

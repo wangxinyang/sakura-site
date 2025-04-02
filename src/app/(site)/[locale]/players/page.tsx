@@ -4,9 +4,15 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Medal, Star, Trophy, Award } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function PlayersPage() {
   const t = useTranslations("team");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // 按年级分类的球员数据
   const playersByGrade: Record<
@@ -131,6 +137,30 @@ export default function PlayersPage() {
           "Despite being one of the youngest in the team, he has great passion for baseball. Practicing basics diligently.",
       },
     ],
+    "1": [
+      {
+        name: "小林 拓人",
+        nameEn: "Takuto Kobayashi",
+        role: "player",
+        image: "/images/WechatIMG18.jpg",
+        position: "野手 / Fielder",
+        number: "15",
+        bio: "最年少の一年生。野球が大好きで練習にも積極的に参加しています。これから基礎をしっかり身につけ、チームの将来を担う選手として期待されています。",
+        bioEn:
+          "The youngest first grader. Loves baseball and actively participates in practice. Expected to develop strong fundamentals and become a key player for the team's future.",
+      },
+      {
+        name: "山田 太一",
+        nameEn: "Taichi Yamada",
+        role: "player",
+        image: "/images/WechatIMG17.jpg",
+        position: "野手 / Fielder",
+        number: "16",
+        bio: "野球初心者ながら、運動神経が良く成長が早い一年生。毎回の練習を楽しみながら、基本技術を着実に身につけています。",
+        bioEn:
+          "A first grader new to baseball but with good athletic ability and quick learning. Enjoys every practice while steadily mastering basic skills.",
+      },
+    ],
   };
 
   const grades = Object.keys(playersByGrade).sort(
@@ -141,6 +171,16 @@ export default function PlayersPage() {
     "team-captain": <Trophy className="h-5 w-5 text-yellow-500" />,
     player: <Star className="h-5 w-5 text-sky" />,
   };
+
+  if (!mounted) {
+    return (
+      <div className="container py-12 flex items-center justify-center min-h-[60vh]">
+        <div className="animate-pulse text-2xl text-sakura font-bold">
+          Loading...
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container py-12">
@@ -154,7 +194,7 @@ export default function PlayersPage() {
               value={grade}
               className="flex-1 data-[state=active]:bg-sakura data-[state=active]:text-white"
             >
-              {t("grade", { grade })}
+              {t(`grades.${grade}`)}
             </TabsTrigger>
           ))}
         </TabsList>

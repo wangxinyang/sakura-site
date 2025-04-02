@@ -2,7 +2,7 @@
 
 import { ButtonHTMLAttributes, forwardRef } from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, MotionProps } from "framer-motion";
 import Link from "next/link";
 
 interface InkButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -41,13 +41,25 @@ const InkButton = forwardRef<HTMLButtonElement, InkButtonProps>(
       lg: "h-12 px-6 py-3 text-lg",
     };
 
+    const MotionSpan = motion.span as React.ForwardRefExoticComponent<
+      Omit<
+        React.DetailedHTMLProps<
+          React.HTMLAttributes<HTMLSpanElement>,
+          HTMLSpanElement
+        >,
+        "ref"
+      > &
+        MotionProps &
+        React.RefAttributes<HTMLSpanElement>
+    >;
+
     const buttonContent = (
-      <motion.span
+      <MotionSpan
         className="relative z-10 flex items-center justify-center gap-2"
         whileTap={{ scale: 0.97 }}
       >
         {children}
-      </motion.span>
+      </MotionSpan>
     );
 
     const buttonClass = cn(

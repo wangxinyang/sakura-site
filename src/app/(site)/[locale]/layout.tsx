@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n";
 import ClientLayout from "./client-layout";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -23,6 +24,9 @@ export default async function LocaleLayout({
   if (!locales.includes(locale as Locale)) {
     notFound();
   }
+
+  // 启用静态渲染
+  unstable_setRequestLocale(locale as Locale);
 
   const messages = await getMessages(locale);
 

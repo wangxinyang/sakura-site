@@ -60,6 +60,20 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    /* 深色模式下的自定义颜色 */
+    --sakura: 350 80% 75%;
+    --sakura-dark: 350 70% 65%;
+    --sakura-light: 350 85% 85%;
+    --sakura-foreground: 210 40% 98%;
+    --sky: 200 70% 60%;
+    --sky-foreground: 210 40% 98%;
+    --grass: 142 60% 45%;
+    --grass-foreground: 210 40% 98%;
+    --sunny: 40 80% 60%;
+    --sunny-foreground: 210 40% 98%;
+    --ocean: 220 60% 50%;
+    --ocean-foreground: 210 40% 98%;
   }
 }
 
@@ -104,6 +118,10 @@
 .card-hover:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.05);
 }
 
 /* 按钮弹跳动画 */
@@ -161,6 +179,11 @@
   box-shadow: 0 0 5px rgba(255, 183, 197, 0.3);
 }
 
+.dark .sakura-petal {
+  background-color: rgba(255, 120, 150, 0.5);
+  box-shadow: 0 0 5px rgba(255, 120, 150, 0.3);
+}
+
 .sakura-petal::after {
   content: '';
   position: absolute;
@@ -171,6 +194,10 @@
   background-color: rgba(255, 183, 197, 0.3);
   border-radius: 150% 0 150% 0;
   transform: rotate(15deg);
+}
+
+.dark .sakura-petal::after {
+  background-color: rgba(255, 120, 150, 0.2);
 }
 
 @keyframes falling {
@@ -198,62 +225,31 @@
     transform: translateX(0) rotate(0deg);
   }
 
-  25% {
-    transform: translateX(10px) rotate(15deg);
-  }
-
   50% {
-    transform: translateX(-5px) rotate(0deg);
-  }
-
-  75% {
-    transform: translateX(10px) rotate(-15deg);
+    transform: translateX(100px) rotate(180deg);
   }
 
   100% {
-    transform: translateX(0) rotate(0deg);
+    transform: translateX(0) rotate(360deg);
   }
 }
 
-/* 棒球图案背景 */
-.baseball-pattern {
-  background-color: #f8f8f8;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff9d9d' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-
-/* 纸张纹理效果 */
+/* 日式纸张纹理背景 */
 .japanese-paper {
-  background-color: #f8f8f8;
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f0f0f0' fill-opacity='0.8' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 183, 197, 0.2);
+  background-color: #f9f7f7;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 10px 10px;
 }
 
-/* 导航菜单项悬停效果 */
-.nav-link {
-  position: relative;
-  transition: color 0.3s ease;
+.dark .japanese-paper {
+  background-color: hsl(222.2 24% 15%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: hsl(var(--sakura));
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-/* 和风水墨效果按钮 */
+/* 墨水按钮效果 */
 .btn-ink {
-  background-color: #333;
-  color: white;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -262,33 +258,332 @@
 .btn-ink::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E");
+  inset: 0;
+  transition: all 0.3s ease;
+  transform: scale(0);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: inherit;
 }
 
 .btn-ink:hover::before {
+  transform: scale(1);
   opacity: 1;
 }
 
-/* 樱花主导航背景 */
-.main-nav {
-  background-color: white;
-  box-shadow: 0 2px 15px rgba(255, 182, 193, 0.2);
-  position: relative;
+.dark .btn-ink::before {
+  background: rgba(0, 0, 0, 0.2);
 }
 
-.main-nav::before {
+/* 文本动画 */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease-in-out forwards;
+}
+
+.animate-wave {
+  animation: wave 1s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* 适用于标题的特效 */
+.title-animated {
+  position: relative;
+  display: inline-block;
+}
+
+.title-animated::after {
   content: '';
   position: absolute;
-  top: 0;
   left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: theme('colors.sakura.DEFAULT');
+  transition: width 0.5s ease-in-out;
+}
+
+.title-animated:hover::after {
   width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='%23ffb6c1' fill-opacity='0.05'%3E%3Cpath d='M20 3.36A16.64 16.64 0 0 0 3.36 20 16.64 16.64 0 0 0 20 36.64 16.64 16.64 0 0 0 36.64 20 16.64 16.64 0 0 0 20 3.36zM0 20c0 11.05 8.95 20 20 20s20-8.95 20-20S31.05 0 20 0 0 8.95 0 20z'/%3E%3C/g%3E%3C/svg%3E");
-  pointer-events: none;
+}
+
+/* 适用于深色模式的动画和文字颜色调整 */
+.dark .animate-fadeIn,
+.dark .animate-slideUp,
+.dark .animate-wave {
+  color: inherit;
+}
+
+.dark .title-animated::after {
+  background-color: hsl(var(--sakura));
+}
+
+.dark .text-sakura {
+  color: hsl(var(--sakura-light));
+}
+
+.dark .nav-link::after {
+  background-color: hsl(var(--sakura));
+}
+
+/* 添加导航栏深色模式样式 */
+.dark .main-nav {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 深色模式下调整按钮样式 */
+.dark .bg-sakura {
+  background-color: hsl(var(--sakura));
+  color: hsl(var(--background));
+}
+
+.dark .hover\:bg-sakura-dark:hover {
+  background-color: hsl(var(--sakura-dark));
+  color: hsl(var(--background));
+}
+
+.dark .hover\:text-sakura:hover {
+  color: hsl(var(--sakura-light));
+}
+
+/* 深色模式下调整卡片和纸张样式 */
+.dark .border-sakura\/20 {
+  border-color: hsl(var(--sakura) / 0.2);
+}
+
+/* 深色模式下调整阴影效果 */
+.dark .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -4px rgba(0, 0, 0, 0.3);
+}
+
+.dark .hover\:shadow-lg:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -4px rgba(0, 0, 0, 0.3);
+}
+
+/* 深色模式下的文本颜色调整 */
+.dark .text-foreground {
+  color: hsl(var(--foreground));
+}
+
+.dark .text-muted-foreground {
+  color: hsl(var(--muted-foreground));
+}
+
+.dark .text-primary {
+  color: hsl(var(--primary));
+}
+
+.dark .text-secondary {
+  color: hsl(var(--secondary-foreground));
+}
+
+/* 深色模式下的背景色调整 */
+.dark .bg-background {
+  background-color: hsl(var(--background));
+}
+
+.dark .bg-secondary {
+  background-color: hsl(var(--secondary));
+}
+
+/* 深色模式下新闻卡片样式 */
+.dark .card-hover {
+  background-color: hsl(222.2 26% 12%);
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--border));
+}
+
+.dark .border {
+  border-color: hsl(var(--border));
+}
+
+.dark .bg-white {
+  background-color: hsl(var(--background));
+}
+
+.dark .bg-slate-100 {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+}
+
+.dark .text-slate-800 {
+  color: hsl(var(--foreground));
+}
+
+.dark .text-muted-foreground {
+  color: hsl(var(--muted-foreground));
+}
+
+/* 确保深色模式下的文本颜色对比度足够 */
+.dark .line-clamp-3 {
+  color: hsl(var(--foreground));
+}
+
+.dark .text-lg,
+.dark .text-xl,
+.dark .text-2xl,
+.dark .text-3xl {
+  color: hsl(var(--foreground));
+}
+
+/* 确保链接和按钮在深色模式下有足够对比度 */
+.dark .group-hover\:translate-x-1 {
+  color: hsl(var(--foreground));
+}
+
+/* 确保深色模式下的各种颜色按钮和文本有适当对比度 */
+.dark .hover\:shadow-md:hover {
+  box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.05),
+    0 2px 4px -1px rgba(255, 255, 255, 0.03);
+}
+
+/* 添加额外深色模式样式确保特定元素正确显示 */
+.dark .children-font {
+  color: hsl(var(--foreground));
+}
+
+.dark .text-gray-600 {
+  color: hsl(var(--foreground) / 0.8);
+}
+
+.dark .from-slate-50,
+.dark .to-white {
+  --tw-gradient-from: hsl(var(--background));
+  --tw-gradient-to: hsl(var(--background));
+}
+
+.dark .bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, hsl(222.2 26% 12%), hsl(222.2 84% 4.9%));
+}
+
+/* 确保轮播图区域在深色模式下有足够对比度 */
+.dark .bg-muted {
+  background-color: hsl(217.2 32.6% 12%);
+}
+
+/* 确保活动区域在深色模式下文字可见 */
+.dark .japanese-paper {
+  background-color: hsl(222.2 26% 12%);
+}
+
+/* 确保动画文字在深色模式下可见 */
+.dark .animate-float,
+.dark .animate-fadeIn,
+.dark .animate-slideUp {
+  color: hsl(var(--foreground));
+}
+
+/* 深色模式下的公告栏样式 */
+.dark .bg-sakura.text-white {
+  color: hsl(var(--sakura-foreground));
+}
+
+.dark .bg-white\/20.text-white {
+  color: hsl(var(--sakura-foreground));
+}
+
+.dark .border-white {
+  border-color: hsl(var(--sakura-foreground) / 0.3);
+}
+
+/* 确保按钮文字在深色模式下可见 */
+.dark button.text-white {
+  color: hsl(var(--sakura-foreground));
+}
+
+.dark a[role="button"] {
+  color: hsl(var(--sakura-foreground));
+}
+
+/* 修复轮廓按钮在深色模式下的样式 */
+.dark .bg-white\/20 {
+  background-color: hsla(var(--sakura) / 0.2);
+  color: hsl(var(--sakura-foreground));
+}
+
+/* 表单元素深色模式样式 */
+.dark input,
+.dark textarea,
+.dark select {
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--card));
+  border-color: hsl(var(--border));
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: hsl(var(--sakura));
+  outline-color: hsl(var(--sakura));
+  box-shadow: 0 0 0 1px hsl(var(--sakura) / 0.1);
+}
+
+/* 确保按钮在深色模式中颜色正确 */
+.dark input[type="submit"],
+.dark button[type="submit"] {
+  background-color: hsl(var(--sakura));
+  color: hsl(var(--sakura-foreground));
+}
+
+.dark input[type="submit"]:hover,
+.dark button[type="submit"]:hover {
+  background-color: hsl(var(--sakura-dark));
+}
+
+/* 确保联系表单页面文本可见 */
+.dark label {
+  color: hsl(var(--foreground));
+}
+
+.dark .text-primary {
+  color: hsl(var(--primary));
+}
+
+.dark iframe {
+  border-color: hsl(var(--border));
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

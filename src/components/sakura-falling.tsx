@@ -20,8 +20,8 @@ export default function SakuraFalling({
 }) {
   const [petals, setPetals] = useState<SakuraPetal[]>([]);
   const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   useEffect(() => {
     setMounted(true);
@@ -58,8 +58,11 @@ export default function SakuraFalling({
             animationDelay: `${petal.delay}s`,
             opacity: petal.opacity,
             backgroundColor: isDark
-              ? "rgba(255, 183, 197, 0.5)"
+              ? "rgba(255, 120, 150, 0.5)"
               : "rgba(255, 183, 197, 0.7)",
+            boxShadow: isDark
+              ? "0 0 5px rgba(255, 120, 150, 0.3)"
+              : "0 0 5px rgba(255, 183, 197, 0.3)",
           }}
         />
       ))}

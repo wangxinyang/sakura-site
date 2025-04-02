@@ -22,6 +22,28 @@ export default function ClientLayout({
 
   useEffect(() => {
     setMounted(true);
+
+    // 添加滚动监听，实现滚动动画效果
+    const handleScroll = () => {
+      const elements = document.querySelectorAll(".scroll-animate");
+
+      elements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const isVisible =
+          rect.top < window.innerHeight - 100 && rect.bottom > 0;
+
+        if (isVisible) {
+          element.classList.add("animate-fadeIn");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // 初始检查
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (

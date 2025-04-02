@@ -17,9 +17,7 @@ export function Footer() {
             <p className="text-muted-foreground mt-2">{t("practice")}</p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">
-              {commonT("siteName")}
-            </h3>
+            <h3 className="text-lg font-semibold mb-4">メニュー</h3>
             <nav className="flex flex-col space-y-2">
               <Link href="/" className="hover:text-primary">
                 {commonT("home")}
@@ -27,7 +25,7 @@ export function Footer() {
               <Link href="/news" className="hover:text-primary">
                 {commonT("news")}
               </Link>
-              <Link href="/team" className="hover:text-primary">
+              <Link href="/coaches" className="hover:text-primary">
                 {commonT("team")}
               </Link>
               <Link href="/players" className="hover:text-primary">
@@ -36,7 +34,7 @@ export function Footer() {
             </nav>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">{commonT("join")}</h3>
+            <h3 className="text-lg font-semibold mb-4">入部・お問い合わせ</h3>
             <nav className="flex flex-col space-y-2">
               <Link href="/join" className="hover:text-primary">
                 {commonT("join")}

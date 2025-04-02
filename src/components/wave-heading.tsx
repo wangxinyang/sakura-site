@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 interface WaveHeadingProps {
   children: ReactNode;
@@ -17,7 +17,7 @@ export default function WaveHeading({
   as = "h2",
   center = true,
 }: WaveHeadingProps) {
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
@@ -25,7 +25,7 @@ export default function WaveHeading({
     }),
   };
 
-  const child = {
+  const child: Variants = {
     visible: {
       opacity: 1,
       y: 0,
